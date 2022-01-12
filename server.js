@@ -6,7 +6,7 @@ const search = require("./routes/search");
 const server = express();
 
 // sends specified route to "search" router
-server.use("api/search", search);
+server.use("/search", search);
 
 // listens on specified port
 server.listen(3000);
