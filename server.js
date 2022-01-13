@@ -4,6 +4,9 @@ const express = require("express");
 // creates express application
 const server = express();
 
+// creates app object
+let app = new App();
+
 // handles incoming network traffic for "root" route
 server.get("/", async function(request, response) {
 
