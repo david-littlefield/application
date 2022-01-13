@@ -112,9 +112,9 @@ function get_unsplash_urls() {
         images = Array.from(images);
 
         // filters images
-        images.filter(function(image) {
+        images = images.filter(function(image) {
             let hyperlink = image.closest("a").href;
-            return hyperlink.includes("https://unsplash.com/photos/");
+            return hyperlink.includes("/photos/");
         });
 
         // parses url from image elements
