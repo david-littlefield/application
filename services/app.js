@@ -19,6 +19,7 @@ class App {
             await this.create_url(text);
             await this.open_url();
             await this.load_function();
+            await this.page.waitForTimeout(1000);
             await this.execute_function();
             await this.close_browser();
             return this.unsplash_urls;
