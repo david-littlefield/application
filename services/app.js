@@ -74,7 +74,7 @@ class App {
         let base = "https://unsplash.com";
         let path = "/s/photos/";
         let term = text.replace(" ", "-");
-        let query = "?order_by=latest";
+        let query = "?order_by=latest&orientation=landscape";
         this.url = base + path + term + query;
     }
 
