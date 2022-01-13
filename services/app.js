@@ -111,13 +111,22 @@ function get_unsplash_urls() {
         // creates iterable array
         images = Array.from(images);
 
-    // parses image url from image elements
-    let urls = images.map(function(image) {
-        return image.src;
-    });
+        // filters images
+        images.filter(function(image) {
+            let hyperlink = image.closest("a").href;
+            return hyperlink.includes("https://unsplash.com/photos/");
+        });
 
-    // returns urls
-    return urls;
+        // parses url from image elements
+        images = images.map(function(image) {
+            let url = image.src;
+                url = url.split("?");
+                url = url[0];
+            return url;
+        });
+
+    // returns images
+    return images;
 }
 
 // exports "app" class
