@@ -1,5 +1,6 @@
 // imports specified modules
 const express = require("express");
+const App = require("./services/app");
 
 // creates express application
 const server = express();
@@ -8,7 +9,7 @@ const server = express();
 let app = new App();
 
 // handles incoming network traffic for "root" route
-server.get("/", async function(request, response) {
+server.get("/search.php", async function(request, response) {
 
     // searches unsplash for "term" query
     let urls = await app.search(request.query.term);
